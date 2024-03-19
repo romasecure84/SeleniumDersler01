@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class C04_Locators {
     public static void main(String[] args) throws InterruptedException {
@@ -25,7 +26,11 @@ public class C04_Locators {
         WebElement searchBox= driver.findElement(By.id("twotabsearchtextbox"));
         searchBox.sendKeys("notebook", Keys.ENTER);
         //amazon sehifesindeki taglarin a olanklarinin sayisini yazdirin
-
+        List<WebElement> tag=driver.findElements(By.tagName("a"));
+        System.out.println("Taglari a olanlarin sayi : "+ tag.size());
+        List<WebElement> label=driver.findElements(By.tagName("label"));
+        System.out.println("Taglari label olanlarin sayi : "+ label.size());
         //sehifeni baglayin
+        driver.close();
     }
 }
