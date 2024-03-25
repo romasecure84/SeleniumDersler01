@@ -52,6 +52,7 @@ public class C02_WindowHandle {
         //Sehifedeki textin "new Window" oldugunu dogrulayin
         Assert.assertTrue(driver.findElement(By.xpath("//h3")).isDisplayed());
         //Bir onceki pencereye geri dondukden sonrs sehife basliginin "The Internet" oldugunu dogrulayin
+        Thread.sleep(2000);
         driver.switchTo().window(windowList.get(0));
         Assert.assertTrue(driver.getTitle().contains("The Internet"));
     }
